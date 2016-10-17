@@ -6,19 +6,14 @@ head(prefix="og: http://ogp.me/ns# nodejsexpressdemo: http://ogp.me/ns/apps/node
   title= pkg.name + ' - ' + title
   meta(name="keywords", content="{{ pkg.keywords.join(',') }}")
   meta(name="description", content="{{ pkg.description }}")
-
-  meta(property="fb:app_id", content="293989217296609")
-  meta(property="og:title", content=pkg.name + ' - ' + title)
-  meta(property="og:description", content=pkg.description)
-  meta(property="og:url", content="http://nodejs-express-demo.herokuapp.com")
-  meta(property="og:site_name", content="Node.js Express Mongoose Demo")
-  meta(property="fb:admins", content="1037213945")
+  
+  base(href="/")
 
   block head
     link(href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css", rel="stylesheet")
-    link(href="/css/jquery.tagsinput.css", rel="stylesheet")
     link(href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", rel="stylesheet")
-    link(rel="stylesheet", href="/css/app.css")
+    link(href="/bower_components/swiper/dist/css/swiper.min.css", rel="stylesheet")
+    link(rel="stylesheet", href="/css/style.css")
 
   //
      HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
