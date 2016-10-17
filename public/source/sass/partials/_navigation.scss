@@ -1,0 +1,31 @@
+/** Navnar **/
+
+.navbar-brand {
+  font-size: 14px;
+  color: #000 !important;
+}
+
+.navbar-collapse.collapse {
+  display: block!important;
+}
+
+.navbar-nav {
+  float: left !important;
+  
+  >li {
+    float: left !important;
+  }
+  
+  &.navbar-right:last-child {
+    margin-right: -15px !important;
+  }
+}
+
+.navbar-right {
+  float: right!important;
+  
+  > li > a {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
