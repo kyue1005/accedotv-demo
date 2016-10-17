@@ -3,44 +3,41 @@
 /*
  * Module dependencies.
  */
-
-const articles = require('../app/controllers/articles');
-const comments = require('../app/controllers/comments');
-const tags = require('../app/controllers/tags');
+const express = require('express');
+const site = require('../app/controllers/site');
+const movies = require('../app/controllers/movies');
+const histories = require('../app/controllers/histories');
+const records = require('../app/controllers/records');
+const historyRecord = require('./middlewares/historyRecord');
 
 /**
  * Route middlewares
  */
 
-
 /**
  * Expose routes
  */
 
-module.exports = function (app, passport) {
-  // article routes
-  app.param('id', articles.load);
-  app.get('/articles', articles.index);
-  app.get('/articles/new', articles.new);
-  app.post('/articles', articles.create);
-  app.get('/articles/:id', articles.show);
-  app.get('/articles/:id/edit', articles.edit);
-  app.put('/articles/:id', articles.update);
-  app.delete('/articles/:id', articles.destroy);
+module.exports = function (app) {
+  // partials routes
+  app.get('/partials/:name', site.partials);
+
+  // JSON API
+  app.get('/api/movies', movies.movies);
+  app.get('/api/movie/:name', movies.getMovie);
+  app.get('/api/history', historyRecord.getList, histories.list);
+  
+  // histories routes
+  app.param('vid', records.load);
+  
+  app.post('/histories/records', historyRecord.getList, records.create);
+  app.delete('/histories/records/:vid', historyRecord.getList, records.destroy);
 
   // home route
-  app.get('/', articles.index);
-
-  // comment routes
-  app.param('commentId', comments.load);
-  app.post('/articles/:id/comments', comments.create);
-  app.get('/articles/:id/comments', comments.create);
-  app.delete('/articles/:id/comments/:commentId', comments.destroy);
-
-  // tag routes
-  app.get('/tags/:tag', tags.index);
-
-
+  app.get('/', historyRecord.getList, site.home);
+  app.get('/movies', historyRecord.getList, site.home);
+  app.get('/video/:videoName', historyRecord.getList, site.home);
+  
   /**
    * Error handling
    */

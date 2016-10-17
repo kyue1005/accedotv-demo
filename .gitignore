@@ -1,6 +1,9 @@
 node_modules/
+public/bower_components/
+public/css/style.css
 .monitor
 config/env/env.json
 Makefile
 .DS_Store
 .env
+npm-debug.log

@@ -1,0 +1,7 @@
+.video-player
+  i.fa.fa-times(aria-hidden="true")
+  h4 Now Watching: 
+    i {{movie.title}}
+  video.player(width="{{movie.info[0].width}}", height="{{movie.info[0].height}}", controls, autoplay, video-listener)
+    source(ng-repeat="source in movie.info", vsrc="{{source.url}}", type="video/{{source.format}}", html5vfix)
+    |Your browser does not support the video tag.

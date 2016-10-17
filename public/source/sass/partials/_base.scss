@@ -1,0 +1,38 @@
+/** base **/
+html {
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 60px;
+}
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.error,
+a.error,
+a.error:hover,
+a.error:focus,
+button.error,
+button.error:hover,
+button.error:focus {
+  color: #D9534F;
+  outline: none;
+}
+
+.muted {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.alert {
+  margin-top: 10px;
+}

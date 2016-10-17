@@ -76,8 +76,6 @@ module.exports = function (app) {
   }));
 
   // CookieParser should be above session
-  app.use(cookieParser());
-  app.use(cookieSession({ secret: 'secret' }));
   app.use(session({
     resave: false,
     saveUninitialized: true,
@@ -87,6 +85,8 @@ module.exports = function (app) {
       collection : 'sessions'
     })
   }));
+  app.use(cookieParser());
+  // app.use(cookieSession({ secret: 'accedotv' }));
 
   // connect flash for flash messages - should be declared after sessions
   app.use(flash());

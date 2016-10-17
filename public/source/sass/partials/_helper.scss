@@ -1,0 +1,31 @@
+.form-actions {
+  background: #fff;
+  border: 0;
+}
+
+.muted {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.alert {
+  margin-top: 10px;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+#spacer {
+  display: inline-block;
+}
