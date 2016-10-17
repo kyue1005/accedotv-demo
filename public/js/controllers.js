@@ -84,7 +84,8 @@ angular.module('myVOD.controllers', ['ksSwiper'])
     $http.get('/api/history')
       .success(function(data, status, headers, config) {
         if (data.history) {
-          data.history.forEach(function(record) {
+          // Reverse order, due to record always add to array head
+          data.history.reverse().forEach(function(record) {
             $scope.histories.add(record);
           });
         }
