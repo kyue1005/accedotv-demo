@@ -80,6 +80,9 @@ module.exports = function (app) {
     resave: false,
     saveUninitialized: true,
     secret: pkg.name,
+    cookie: {
+      maxAge: 3600 * 24 * 365 * 1000
+    },
     store: new mongoStore({
       url: config.db,
       collection : 'sessions'
