@@ -4,13 +4,13 @@ angular.module('myVOD.controllers', ['ksSwiper'])
     $scope.swiper = {};
     $scope.movies = Movies;
     $scope.histories = Histories;
-    $scope.total = 0;
+    $scope.total = $scope.movies.list.length;
     $scope.limit = $scope.limit || 5;
-    $scope.offset = $scope.offset || 0;
+    $scope.offset = $scope.offset || $scope.total;
     $scope.fetching = false;
     
     $scope.onReadySwiper = function (swiper) {
-      swiper.on('onSliderMove', $scope.checkSlideVisibility);
+      swiper.on('onSlideChangeStart', $scope.checkSlideVisibility);
       $scope.addVideo(swiper);
     };
     
@@ -53,7 +53,6 @@ angular.module('myVOD.controllers', ['ksSwiper'])
       
       $http.post('/histories/records', record)
         .success(function(data, status, headers, config) {
-          console.log($scope.histories);
           $scope.histories.add(record);
           $location.path('/video/' + record.vid);
         });

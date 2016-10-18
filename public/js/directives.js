@@ -3,6 +3,31 @@
 /* Directives */
 
 angular.module('myVOD.directives', [])
+  .directive('keyupEvents', function($document, $rootScope) {
+    return {
+      restrict: 'A',
+      link: function() {
+        $document.bind('keyup', function(e) {
+          $rootScope.$broadcast('keyup', e);
+          $rootScope.$broadcast('keyup:' + e.which, e);
+        });
+      }
+    };
+  })
+  
+  .directive('swiperKeyboardAccess', function($document) {
+    return {
+      restrict: 'A',
+      link: function(scope, element, attr) {
+        scope.$on('keyup:9', function(evt, keyDownEvt) {
+          if (element.find('.swiper-slide a:focus').length) {
+            scope.swiper.slideTo(element.find('.swiper-slide a:focus').first().parent().index('.swiper-slide'));
+          }
+        });
+      }
+    }
+  })
+  
   .directive('html5vfix', function() {
     return {
       restrict: 'A',
