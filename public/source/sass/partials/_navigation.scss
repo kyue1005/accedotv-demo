@@ -15,17 +15,11 @@
   >li {
     float: left !important;
   }
-  
-  &.navbar-right:last-child {
-    margin-right: -15px !important;
-  }
+}
+.navbar-header {
+  float: left!important;
 }
 
 .navbar-right {
   float: right!important;
-  
-  > li > a {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
 }
