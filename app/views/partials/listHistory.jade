@@ -1,0 +1,8 @@
+.history-popup
+    .history-record-wrapper
+      .history-record(ng-repeat='record in histories.list', ng-hide="!histories.list.length")
+        a(href='/video/{{record.vid}}')
+          h4 {{record.title}}
+        p Watched on {{record.createdAt | amUtcOffset:'+0800' | amDateFormat:'DD/MM/YY HH:mm'}}
+        
+      .empty-list(ng-hide="histories.list.length") No History Found

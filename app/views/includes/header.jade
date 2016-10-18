@@ -1,21 +1,10 @@
 nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
   .container
     .navbar-header
-      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
       a.navbar-brand(href='/') Home
-    .collapse.navbar-collapse
 
-      ul.nav.navbar-nav.navbar-right(ng-controller='HistoryCtrl')
-        li
-          a(href, history-btn) History
-          
-          .history-popup
-            .history-record-wrapper
-              .history-record(ng-repeat='record in histories.list')
-                a(href='/video/{{record.vid}}')
-                  h4 {{record.title}}
-                p Watched on {{record.createdAt | amUtcOffset:'+0800' | amDateFormat:'DD/MM/YY HH:mm'}}
+    ul.nav.navbar-nav.navbar-right(ng-controller='HistoryCtrl')
+      li
+        a(href, history-btn) History
+        
+        include ../partials/listHistory

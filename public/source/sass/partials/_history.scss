@@ -20,6 +20,10 @@
     }
   }
   
+  .empty-list {
+    text-align: center;
+  }
+  
   &::before {
     content: "";
     position: absolute;
