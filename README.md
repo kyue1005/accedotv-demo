@@ -13,7 +13,7 @@ This is a demo node.js application demonstrating a VOD application.
 ## Install
 
 ```sh
-$ git clone git://github.com/kyue1005/node-express-mongoose-demo.git
+$ git clone git://github.com/kyue1005/accedotv-demo.git
 $ npm install -g bower gulp-cli
 $ npm install
 $ bower install
