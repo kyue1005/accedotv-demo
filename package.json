@@ -41,7 +41,7 @@
     "jade": "~1.11.0",
     "method-override": "~2.3.5",
     "mongoose": "~4.10.2",
-    "morgan": "~1.8.2",
+    "morgan": "~1.9.1",
     "multer": "~1.2.0",
     "only": "0.0.2",
     "request": "^2.75.0",
