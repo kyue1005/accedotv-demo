@@ -42,7 +42,7 @@
     "method-override": "~2.3.5",
     "mongoose": "~4.10.2",
     "morgan": "~1.8.2",
-    "multer": "~1.2.0",
+    "multer": "~2.0.0",
     "only": "0.0.2",
     "request": "^2.75.0",
     "request-promise": "^4.1.1",
